@@ -1,0 +1,96 @@
+<div class=" shadow d-flex ">
+    
+    <div class="sidebar">
+        <div class="profile shadow border ">
+        <img [src]="StudentUrl"  width="100%" alt="{{StudentName}}">
+        <h3 class="text-center">Welcome {{s_name}}</h3>
+        <p>{{s_email}}</p>
+        </div>
+        <div class="details text-center mt-4">
+            <h4>Details</h4>
+            <div class="list-group list-group p-4 shadow">
+                <button type="button" class="list-group-item list-group-item-action px-3 border-0 "
+                  aria-current="true">
+                  Full Name : {{StudentName}}
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-3 border-0">
+                 Age : {{StudentAge}}
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-3 border-0">
+                  Email : {{StudentEmail}}
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-3 border-0">
+                 Course : {{StudentCourse}}
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-3 border-0" disabled>
+                 Status : {{StudentStatus}}
+                </button>
+                <button (click)="AddStudent()" class="btn btn-success">Add</button>
+              </div>
+        </div>
+    </div>
+
+    <div class="main ">
+        <div class="row p-5 d-flex justify-content-between ">
+            <div class="col-3 card shadow bg-primary">
+                Admission Details
+            </div>
+            <div class="col-3 card shadow bg-warning">
+                Course Details
+            </div>
+            <div class="col-3 card shadow bg-success">
+                Mark list
+            </div>
+            <div class="col-3 card shadow bg-danger">
+                Education Background Details
+            </div>
+        </div>
+        <div class="row">
+            <div class="container w-75 bg-warning">
+                <h3 class="text-center m-3">Traners Details</h3>
+               
+                <table *ngIf="viewTrainerStatus" class="border border-2 m-5">
+                    <thead>
+                        <tr class="border border-2">
+                            <th class="border border-2">Id</th>
+                            <th class="border border-2">Name</th>
+                            <th class="border border-2">Course</th>
+                            <th class="border border-2">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of trainers_Details" class="border border-2">
+                            <td class="border border-2">{{user.id}}</td>
+                            <td class="border border-2">{{user.name}}</td>
+                            <td class="border border-2">{{user.course}}</td>
+                            <td class="border border-2">{{user.duration}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="text-center">
+                    <button (click)="btnclick()" class="btn btn-success m-4">View Trainers Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div [ngSwitch]="paymentStatus" class="row text-center m-5 bg-light border border-dark w-50 p-3   ">
+            <p *ngSwitchCase="'Paid'">Fee payment Status : <span class="text-success fw-bolder">Paid</span></p>
+            <p *ngSwitchCase="'Unpaid'">Fee payment Status : <span class="text-danger fw-bolder">Unpaid</span></p>
+            <p *ngSwitchCase="'Installment'">Fee payment Status : <span class="text-primary fw-bolder">Installment</span></p>
+        </div>
+    </div>
+
+    <!-- <div>
+        <input #user type="text" (change)="getStudentname($event)" placeholder="Enter the name">
+        <br>
+        <button type="submit" (click)="UserName(user)" class="btn btn-warning">Submit</button>
+    </div> -->
+
+    
+
+</div>
+
+
+

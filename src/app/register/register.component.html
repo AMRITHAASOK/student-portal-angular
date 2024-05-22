@@ -1,0 +1,76 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 p-5   ">
+            <!-- image -->
+            <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--DJTjT7lf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://cdn-images-1.medium.com/max/2800/1*TjXUGjDSTAR-H3O2M9M50A.gif" alt="">
+        </div>
+        <div class="col-6">
+            <!-- form -->
+           
+            <div class="form  p-5">
+                <h1 class="text-center m-3 text-primary">Register Here...</h1>
+                <form (ngSubmit)="register()">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div data-mdb-input-init class="form-outline">
+                          <input [(ngModel)]="stud_fname" name="stud_fname"  type="text" id="form3Example1" class="form-control" />
+                          <label class="form-label" for="form3Example1">First name</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div data-mdb-input-init class="form-outline">
+                          <input [(ngModel)]="stud_lname" name="stud_lname" type="text" id="form3Example2" class="form-control" />
+                          <label class="form-label" for="form3Example2">Last name</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input [(ngModel)]="stud_email" name="stud_email" type="email" id="form3Example3" class="form-control" />
+                      <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+                  
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input [(ngModel)]="stud_pswd" name="stud_pswd" type="password" id="form3Example4" class="form-control" />
+                      <label class="form-label" for="form3Example4">Password</label>
+                    </div>
+                  
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <a routerLink="/login">Already Register ? Please Login</a>
+                    </div>
+                  
+                   <div class="text-center">
+                     <!-- Submit button -->
+                     <button  data-mdb-ripple-init type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign up</button>
+                         
+                   </div>
+                
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                      <p>or sign up with:</p>
+                      <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                      </button>
+                  
+                      <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="fab fa-google"></i>
+                      </button>
+                  
+                      <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="fab fa-twitter"></i>
+                      </button>
+                  
+                      <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="fab fa-github"></i>
+                      </button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
